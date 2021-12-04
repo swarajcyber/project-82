@@ -14,13 +14,13 @@ radius=document.getElementById("radius").value
 }
 canvas.addEventListener("mousemove",my_mousemove)
 function my_mousemove(e){
-    current_postion_of_mouse_x=e.cliectX-canvas.offsideleft
-    current_postion_of_mouse_y=e.cliectY-canvas.offsidetop
+    current_postion_of_mouse_x=e.clientX-canvas.offsideLeft
+    current_postion_of_mouse_y=e.clientY-canvas.offsideTop
     if (mouseEvent=="mousedown"){
         ctx.beginPath()
         ctx.strokeStyle=color
         ctx.lineWidth=width_of_line
         ctx.arc(current_postion_of_mouse_x,current_postion_of_mouse_y,radius,0,2*Math.PI)
-        ctx.stroke()
+        ctx.stroke()    
     }
 }
