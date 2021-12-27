@@ -14,8 +14,8 @@ radius=document.getElementById("radius").value
 }
 canvas.addEventListener("mousemove",my_mousemove)
 function my_mousemove(e){
-    current_postion_of_mouse_x=e.clientX-canvas.offsideLeft
-    current_postion_of_mouse_y=e.clientY-canvas.offsideTop
+    current_postion_of_mouse_x=e.clientX-canvas.offsetLeft
+    current_postion_of_mouse_y=e.clientY-canvas.offsetTop
     if (mouseEvent=="mousedown"){
         ctx.beginPath()
         ctx.strokeStyle=color
@@ -23,4 +23,6 @@ function my_mousemove(e){
         ctx.arc(current_postion_of_mouse_x,current_postion_of_mouse_y,radius,0,2*Math.PI)
         ctx.stroke()    
     }
+    last_position_of_x=current_postion_of_mouse_x
+    last_position_of_y=current_postion_of_mouse_y
 }
